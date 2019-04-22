@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <form enctype="application/x-www-form-urlencoded" method="POST" name="reg">
+        <fieldset>
+            <legend>Registration</legend>
+            <p>
+                <label>Login:
+                    <input type="text" placeholder="Ivan" minlength="2" maxlength="20" required>
+                </label>
+            </p>
+            <p>
+                <label>E-mail:
+                    <input type="email" placeholder="example@example.com" required></label>
+            </p>
+            <p>
+                <label>Password:
+                    <input type="password" placeholder="Enter password" minlength="5" maxlength="20" required></label>
+            </p>
+            <p>
+                <label>Confirm password:
+                    <input type="password" placeholder="Confirm password" minlength="5" maxlength="20" required></label>
+            </p>
+            <p>
+                <input type="submit" value="Register">
+            </p>
+        </fieldset>
+
+        <br />
+
+        <fieldset>
+            <label>Upload file:
+                <input type="file" accept="image/*"></label>
+            <p>
+                <input type="submit" value="Upload">
+            </p>
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Опросник</legend>
+            <p><strong>С какими редакторами кода вы знакомы?</strong></p>
+            <p><label>
+                    <input type="checkbox" name="answer1" value="01" checked>
+                    Visual Studio Code
+                </label><br>
+                <label>
+                    <input type="checkbox" name="answer2" value="02">
+                    Sublime text
+                </label><br>
+                <label>
+                    <input type="checkbox" name="answer3" value="03">
+                    Notepad++
+                </label><br>
+                <label>
+                    <input type="checkbox" name="answer4" value="04">
+                    Atom
+                </label><br>
+                <label>
+                    <input type="checkbox" name="answer5" value="05">
+                    Intellij WebStorm
+                </label><br>
+            </p>
+            <p><input type="submit" value="Отправить"></p>
+        </fieldset>
+
+        <br />
+
+        <fieldset>
+            <legend>Горизонтальное меню</legend>
+            <p>
+                <nav>
+                    <ul>
+                        <li><a href="DZ2/authorization.html"><strong>Sign in</strong></a></li>
+                        <li><a href="DZ2/registration.html"><strong>Create your account</strong></a></li>
+                        <li><a href="DZ2/index.html#one"><em>Household equipment</em></a></li>
+                        <li><a href="DZ2/index.html#two"><em>Home electronics</em></a></li>
+                        <li><a href="DZ2/index.html#three"><em>Pet products</em></a></li>
+                        <li><a href="DZ2/page2.html"><em>Page2</em></a></li>
+                        <li><a href="DZ2/page3.html"><em>Page3</em></a></li>
+
+                    </ul>
+                </nav>
+            </p>
+
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

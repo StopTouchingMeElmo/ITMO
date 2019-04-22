@@ -1,0 +1,23 @@
+body {
+    background-color: aqua;
+    background-image: url(img/background_light.jpg);
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+.author {
+    color: green;
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    background: yellow;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+}
