@@ -1,0 +1,50 @@
+@import url("./grid.css");
+
+body {
+	margin: 0;
+	background-color: aquamarine;
+}
+
+.container {
+	display: inline-block;
+	position: relative;
+}
+
+.slider {
+	padding: 0;
+	margin: 0 0 30px;
+	list-style-type: none;
+}
+
+.slider li {
+	display: none;
+}
+
+.slider li.active {
+	display: block;
+}
+
+.content {
+	display: block;
+	position: absolute;
+	left: 30px;
+	bottom: 50px;
+	color: red;
+}
+.content p {
+	font-size: 25px;
+}
+
+.card {
+	border: 1px solid black;
+	height: 100px;
+	margin: 5px;
+}
+
+.cards {
+	margin-bottom: 30px;
+}
+
+.row {
+	overflow: hidden;
+}
