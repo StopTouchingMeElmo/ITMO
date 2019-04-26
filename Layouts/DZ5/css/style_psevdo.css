@@ -1,0 +1,88 @@
+.flex-row {
+	display: flex;
+}
+
+.border {
+	border: 1px solid black;
+}
+
+.flex-2 {	
+	flex: 2;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.form {
+    display:none;
+    box-shadow: 70px 70px 30px grey; 
+}
+
+.form:target {
+	display:block;
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	bottom: 200px;
+	right: 200px;
+	background: rgb(247, 247, 247);
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.spisok {
+    justify-content: center;
+}
+
+.spisok1 {
+    align-self: center;
+}
+.spisok2 {
+    align-self: center;
+}
+
+body {
+	margin: 0;
+	background-color: aquamarine;
+}
+
+li:hover > .sub-menu {
+    display: block;    
+}
+
+input[type="text"] {
+	color: red;
+}
+
+input[type="email"] {
+	color: blue;
+}
+
+a:hover {
+	background: red;
+}
+
+a:visited  {
+	color: brown;
+}
+
+a:link  {
+	color: blue;
+}
+
+a:active {
+	color: black;
+}

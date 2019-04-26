@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo_Flex</title>
+    <link rel="stylesheet" href="css/style_psevdo.css">
+</head>
+
+<body>
+    <div class="flex-row border">
+        <div class="border flex-2 flex-column">
+            <div class="border flex-row">
+                <div class="border flex-1">
+                    <div id="form" class="form">
+                        <form enctype="application/x-www-form-urlencoded" method="POST" name="reg">
+                            <fieldset>
+                                <legend>Registration</legend>
+                                <p>
+                                    <label>Login:
+                                        <input type="text" placeholder="Ivan" minlength="2" maxlength="20" required>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>E-mail:
+                                        <input type="email" placeholder="example@example.com" required></label>
+                                </p>
+                                <p>
+                                    <label>Password:
+                                        <input type="password" placeholder="Enter password" minlength="5" maxlength="20"
+                                            required></label>
+                                </p>
+                                <p>
+                                    <label>Confirm password:
+                                        <input type="password" placeholder="Confirm password" minlength="5"
+                                            maxlength="20" required></label>
+                                </p>
+                                <p>
+                                    <input type="submit" value="Register">
+                                </p>
+                            </fieldset>
+
+                            <br />
+
+                            <fieldset>
+                                <label>Upload file:
+                                    <input type="file" accept="image/*"></label>
+                                <p>
+                                    <input type="submit" value="Upload">
+                                </p>
+                            </fieldset>
+                            <br />
+                            <p>
+                                <a href="#" class="button">Отмена</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <p>
+                        <a href="#form" class="button">Register now</a>
+                    </p>
+                </div>
+                <div class="border flex-1">2</div>
+            </div>
+            <div class="border images">
+                <img style="max-width: 100%" src="img/bubble.jpg">
+            </div>
+            <div class="border flex-row">
+                <div class="border flex-1">1</div>
+                <div class="border flex-1">2</div>
+            </div>
+        </div>
+        <div class="border flex-1 flex-row spisok">
+            <div class="spisok1">
+                <ul>
+                    <li>Товар 1</li>
+                    <li>Товар 2</li>
+                    <li>Список товаров 3
+                        <ul class="sub-menu">
+                            <li>Вариант 1</li>
+                            <li>Вариант 2</li>
+                            <li>Вариант 3</li>
+                            <li>Вариант 4</li>
+                        </ul>
+                    </li>
+                    <li>Товар 4</li>
+                </ul>
+            </div>
+            </br>
+            <div class="spisok2">
+                <ul>
+                    <li>Товар 5</li>
+                    <li>Товар 6</li>
+                    <li>Список товаров 7
+                        <ul class="sub-menu">
+                            <li>Вариант 1</li>
+                            <li>Вариант 2</li>
+                            <li>Вариант 3</li>
+                            <li>Вариант 4</li>
+                        </ul>
+                    </li>
+                    <li>Товар 8</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
