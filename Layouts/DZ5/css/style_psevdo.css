@@ -63,6 +63,10 @@ li:hover > .sub-menu {
     display: block;    
 }
 
+div:hover > .sub-menu {
+	display: block;
+}
+
 input[type="text"] {
 	color: red;
 }
@@ -76,7 +80,7 @@ a:hover {
 }
 
 a:visited  {
-	color: brown;
+	color: black;
 }
 
 a:link  {
@@ -85,4 +89,17 @@ a:link  {
 
 a:active {
 	color: black;
+}
+
+a {
+	text-decoration: none;
+}
+
+.gorizont {
+	display: flex;
+	justify-content: space-around;
+	height: calc(5em * 1.5);
+	font-size: 20px;
+	padding-top: 20px;
+	background-color: green;
 }
