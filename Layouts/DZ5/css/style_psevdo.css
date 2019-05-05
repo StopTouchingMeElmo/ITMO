@@ -40,7 +40,8 @@
 }
 
 .sub-menu {
-    display: none;
+	display: none;
+	position: absolute;
 }
 
 .spisok {
