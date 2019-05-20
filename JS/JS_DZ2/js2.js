@@ -104,3 +104,27 @@ if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0){
 } else {
     alert("Год НЕ високосный");
 }
+
+/* Задача № 6 */
+
+let plate = parseFloat(prompt("Введите количество тарелок:"));
+let fairy = parseFloat(prompt("Введите количество моющего средства:"));
+let ostatok = fairy - 0.5;
+let potracheno = plate * 0.5;
+let izlishek = fairy - potracheno;
+let neHvatilo = potracheno - fairy;
+let nePomitoTarelok = (potracheno - fairy) / 0.5;
+
+for (let i = 1; i <= plate; i++) {
+    alert(ostatok);
+    ostatok -= 0.5;
+}
+
+if (fairy > potracheno)
+    alert("Осталось средства " + izlishek);
+
+if (fairy < potracheno)
+    alert("Вам не хватило " + neHvatilo + " средства " + " Не помыто " + nePomitoTarelok + " тарелок");
+
+if (fairy === potracheno)
+    alert("Тютилька в тютильку");
