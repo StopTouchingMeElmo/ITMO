@@ -1,7 +1,6 @@
-
 /* Задача № 1 */
 
-let A = [ 12, 4, 3, 10, 1, 20 ];
+let A = [12, 4, 3, 10, 1, 20];
 let B = [-3, -7, -100, -33];
 let C1 = A.concat(B);
 console.log("Массив В в конце массива А: " + C1);
@@ -29,17 +28,14 @@ let delmax = arr.indexOf(max);
 arr.splice(delmax, 1);
 console.log(arr);
 
-/* Задача № 4 */ // Полагаю, что в этой задаче нужно использовать способы, которые мы не проходили. Сидел всю ночь, решить не смог.
+/* Задача № 4 */
 
 let happy = 0;
 for (let i = 1; i < 1000000; i++) {
-    let num = i.toString().padStart(6, '0');
-    while (num) {
-        let sum1 = parseInt(num[0] + num[1] + num[2]);
-        let sum2 = parseInt(num[3] + num[4] + num[5]);
-        if (sum1 === sum2) {
-            happy++;
-        }
+    let arr = i.toString().padStart(6, '0');
+    let num = arr.split('');
+    if ((parseInt(num[0]) + parseInt(num[1]) + parseInt(num[2])) === (parseInt(num[3]) + parseInt(num[4]) + parseInt(num[5]))) {
+        happy++;
     }
 }
 console.log("Всего счастливых билетов: " + happy);
