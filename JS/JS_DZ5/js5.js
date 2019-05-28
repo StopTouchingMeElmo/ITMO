@@ -2,15 +2,15 @@
 
 function compareMassives(mass1, mass2) {
     if (Array.isArray(mass1) === false || Array.isArray(mass2) === false)
-        return console.log('Вы ввели некорректные данные');
+        return false;
     if (mass1.length !== mass2.length)
-        return console.log('Массивы не равны по длине');
+        return false;
     for (let i = 0; i < mass1.length; i++) {
         if (mass1[i] !== mass2[i])
-            return console.log('Массивы не равны по содержанию');
+            return false;
     }
 
-    return console.log('Массивы равны');
+    return true;
 }
 
 let m1 = [1, 2, 3, 4, 5];
@@ -22,11 +22,11 @@ let m5 = 'stringstring';
 let m6 = [1, 2, 3, 4, 5];
 
 
-compareMassives(m1, m6); // массивы равны
-compareMassives(m1, m3); // массивы с разным содержанием
-compareMassives(m1, m2); // массивы разной длины
-compareMassives(m1, m4); // массив со строкой
-compareMassives(m4, m5); // две строки
+console.log(compareMassives(m1, m6)); // массивы равны
+console.log(compareMassives(m1, m3)); // массивы с разным содержанием
+console.log(compareMassives(m1, m2)); // массивы разной длины
+console.log(compareMassives(m1, m4)); // массив со строкой
+console.log(compareMassives(m4, m5)); // две строки
 
 /* Задача № 2 */
 
@@ -68,7 +68,7 @@ printStudent(student);
 
 /* Задача № 4 */ // Возможно ли эту задачу решить через regExp в принципе?
 
-function randomSymbol(min, max) {
+/* function randomSymbol(min, max) {
     let rand = min + Math.random() * (max - min);
     rand = Math.floor(rand);
     return rand;
@@ -78,15 +78,15 @@ let soglasnie = "бвгджзйклмнпрстфхцчшщьъ"; //23 бвгд�
 
 let randomGlasnie = () => glasnie[randomSymbol(0, glasnie.length)];
 let randomSoglasnie = () => glasnie[randomSymbol(0, soglasnie.length)];
-let randomWordLength = () => randomSymbol(3, 6);
+let randomWordLength = randomSymbol(3, 6);
 
 function word() {
     let myWord = "";
-    let regExp1 = /randomGlasnie{2}/g;
-    let regExp2 = /randomSoglasnie{2}/g;
+    let regExp1 = /randomGlasnie(){2}/g;
+    let regExp2 = /randomSoglasnie(){2}/g;
     for (let i = 0; i < randomWordLength; i++)
-        myWord += (randomGlasnie || randomSoglasnie) + (randomGlasnie || randomSoglasnie);
+        myWord += (randomGlasnie() && randomSoglasnie()) + (randomGlasnie() && randomSoglasnie());
     if (!regExp1.test(myWord) && !regExp2.test(myWord))
         return (myWord);
 }
-console.log(word());
+console.log(word()); */
