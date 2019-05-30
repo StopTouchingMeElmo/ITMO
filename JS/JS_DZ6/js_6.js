@@ -21,66 +21,66 @@ console.log(foo(a, 'count', 10); */
 
 
 let getter = (min, max) => {
-    return Math.floor(min + Math.random() * (max + 1 - min));
-  }
-  
-  function ranNumber(min, max) {
-    let arr = [];
-  
-    function randomise() {
-  
-      while (arr.length < max) {
-        let num = getter(min, max);
-        if (!arr.includes(num)) {
-          arr.unshift(num);
-        }
-       /*  return arr; */
-        console.log(`${arr}`);
-  
+  return Math.floor(min + Math.random() * (max + 1 - min));
+}
+
+function ranNumber(min, max) {
+  let arr = [];
+
+  function randomise() {
+
+    while (arr.length < max) {
+      let num = getter(min, max);
+      if (!arr.includes(num)) {
+        arr.unshift(num);
       }
+      /*  return arr; */
+      console.log(`${arr}`);
+
     }
-    return randomise();
   }
-  let vizov1 = ranNumber(1, 100);
-  console.log(vizov1);
-  /* let vizov2 = ranNumber(1, 100);
-  console.log(vizov2);
-  let vizov3 = ranNumber(1, 100);
-  console.log(vizov3);
-  let vizov4 = ranNumber(1, 100);
-  console.log(vizov4);
-  let vizov5 = ranNumber(1, 100);
-  console.log(vizov5);
-  let vizov6 = ranNumber(1, 100);
-  console.log(vizov6);
-  let vizov7 = ranNumber(1, 100);
-  console.log(vizov7);
-  let vizov8 = ranNumber(1, 100);
-  console.log(vizov8);
-  let vizov9 = ranNumber(1, 100);
-  console.log(vizov9);
-  let vizov10 = ranNumber(1, 100);
-  console.log(vizov10);
-  let vizov11 = ranNumber(1, 100);
-  console.log(vizov11);
-  let vizov12 = ranNumber(1, 100);
-  console.log(vizov12);
-  let vizov13 = ranNumber(1, 100);
-  console.log(vizov13);
-  let vizov14 = ranNumber(1, 100);
-  console.log(vizov14);
-  let vizov15 = ranNumber(1, 100);
-  console.log(vizov15);
-  let vizov16 = ranNumber(1, 100);
-  console.log(vizov16);
-  let vizov17 = ranNumber(1, 100);
-  console.log(vizov17);
-  let vizov18 = ranNumber(1, 100);
-  console.log(vizov18);
-  let vizov19 = ranNumber(1, 100);
-  console.log(vizov19);
-  let vizov20 = ranNumber(1, 100);
-  console.log(vizov20); */
+  return randomise();
+}
+let vizov1 = ranNumber(1, 100);
+console.log(vizov1);
+/* let vizov2 = ranNumber(1, 100);
+console.log(vizov2);
+let vizov3 = ranNumber(1, 100);
+console.log(vizov3);
+let vizov4 = ranNumber(1, 100);
+console.log(vizov4);
+let vizov5 = ranNumber(1, 100);
+console.log(vizov5);
+let vizov6 = ranNumber(1, 100);
+console.log(vizov6);
+let vizov7 = ranNumber(1, 100);
+console.log(vizov7);
+let vizov8 = ranNumber(1, 100);
+console.log(vizov8);
+let vizov9 = ranNumber(1, 100);
+console.log(vizov9);
+let vizov10 = ranNumber(1, 100);
+console.log(vizov10);
+let vizov11 = ranNumber(1, 100);
+console.log(vizov11);
+let vizov12 = ranNumber(1, 100);
+console.log(vizov12);
+let vizov13 = ranNumber(1, 100);
+console.log(vizov13);
+let vizov14 = ranNumber(1, 100);
+console.log(vizov14);
+let vizov15 = ranNumber(1, 100);
+console.log(vizov15);
+let vizov16 = ranNumber(1, 100);
+console.log(vizov16);
+let vizov17 = ranNumber(1, 100);
+console.log(vizov17);
+let vizov18 = ranNumber(1, 100);
+console.log(vizov18);
+let vizov19 = ranNumber(1, 100);
+console.log(vizov19);
+let vizov20 = ranNumber(1, 100);
+console.log(vizov20); */
 
 /* Задача № 3 */
 
@@ -90,20 +90,19 @@ let getter = (min, max) => {
 «Иван Петров. 21 год. Интересы: программирование, музыка, аниме. Учится в ИТМО. */
 
 let student = {
-    name: 'Bill',
-    surname: 'Gates',
-    age: 63,
-    interests: ['busuness', 'investor', 'author', 'philanthropist'],
-    study: 'Harvard University',
-    print: function () {
-        console.log(`
+  name: 'Bill',
+  surname: 'Gates',
+  age: 63,
+  interests: ['busuness', 'investor', 'author', 'philanthropist'],
+  study: 'Harvard University',
+  print: function () {
+    console.log(`
     Name: ${this.name}
     Surname: ${this.surname}
     Age: ${this.age}
     Interests: ${this.interests}
     Education: ${this.study}`);
-        return;
-    }
+  }
 };
 
 student.print();
@@ -116,11 +115,11 @@ student.print();
 Определение факториала можно записать как: n! = n * (n - 1) * (n - 2) * ...*1 */
 
 function factorial(n) {
-    if (n <= 0) {
-        return 1;
-    } else {
-        return (n * factorial(n - 1));
-    }
+  if (n <= 0) {
+    return 1;
+  } else {
+    return (n * factorial(n - 1));
+  }
 };
 let n = 8;
 console.log(factorial(n));
@@ -133,26 +132,26 @@ let arr = [ { 'price' : 10, 'count' : 2 }, { 'price' : 5, 'count' : 5},
 { 'price' : 8, 'count' : 5 }, { 'price' : 12, 'count' : 4 }, { 'price' : 8, 'count' : 4},]; */
 
 let arr = [{
-        'price': 10,
-        'count': 2
-    }, {
-        'price': 5,
-        'count': 5
-    },
-    {
-        'price': 8,
-        'count': 5
-    }, {
-        'price': 12,
-        'count': 4
-    }, {
-        'price': 8,
-        'count': 4
-    },
+    'price': 10,
+    'count': 2
+  }, {
+    'price': 5,
+    'count': 5
+  },
+  {
+    'price': 8,
+    'count': 5
+  }, {
+    'price': 12,
+    'count': 4
+  }, {
+    'price': 8,
+    'count': 4
+  },
 ];
 
 function fn(num1, num2) {
-    return num1.price - num2.price;
+  return num1.price - num2.price;
 }
 
 arr.sort(fn);
