@@ -15,7 +15,72 @@ console.log(foo(a, 'count', 10); */
 числа из этого промежутка. Решите задачу через замыкания - в замыкании должен 
 хранится массив чисел, которые уже были сгенерированы функцией. */
 
+// Специально закомментил вывод по одному числу, чтобы показать следующее: в некоторых строках не добавляет новое число, но показывает последнее добавленное, 
+// потом опять начинает добавлять неповторяющиеся цифры.
+// Если выводить по одному, то можно подумать, что он добавляет повторения, но нет, он показывает последнее добавленное. Почему так. Не знаю.
 
+
+let getter = (min, max) => {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+  }
+  
+  function ranNumber(min, max) {
+    let arr = [];
+  
+    function randomise() {
+  
+      while (arr.length < max) {
+        let num = getter(min, max);
+        if (!arr.includes(num)) {
+          arr.unshift(num);
+        }
+       /*  return arr; */
+        console.log(`${arr}`);
+  
+      }
+    }
+    return randomise();
+  }
+  let vizov1 = ranNumber(1, 100);
+  console.log(vizov1);
+  /* let vizov2 = ranNumber(1, 100);
+  console.log(vizov2);
+  let vizov3 = ranNumber(1, 100);
+  console.log(vizov3);
+  let vizov4 = ranNumber(1, 100);
+  console.log(vizov4);
+  let vizov5 = ranNumber(1, 100);
+  console.log(vizov5);
+  let vizov6 = ranNumber(1, 100);
+  console.log(vizov6);
+  let vizov7 = ranNumber(1, 100);
+  console.log(vizov7);
+  let vizov8 = ranNumber(1, 100);
+  console.log(vizov8);
+  let vizov9 = ranNumber(1, 100);
+  console.log(vizov9);
+  let vizov10 = ranNumber(1, 100);
+  console.log(vizov10);
+  let vizov11 = ranNumber(1, 100);
+  console.log(vizov11);
+  let vizov12 = ranNumber(1, 100);
+  console.log(vizov12);
+  let vizov13 = ranNumber(1, 100);
+  console.log(vizov13);
+  let vizov14 = ranNumber(1, 100);
+  console.log(vizov14);
+  let vizov15 = ranNumber(1, 100);
+  console.log(vizov15);
+  let vizov16 = ranNumber(1, 100);
+  console.log(vizov16);
+  let vizov17 = ranNumber(1, 100);
+  console.log(vizov17);
+  let vizov18 = ranNumber(1, 100);
+  console.log(vizov18);
+  let vizov19 = ranNumber(1, 100);
+  console.log(vizov19);
+  let vizov20 = ranNumber(1, 100);
+  console.log(vizov20); */
 
 /* Задача № 3 */
 
