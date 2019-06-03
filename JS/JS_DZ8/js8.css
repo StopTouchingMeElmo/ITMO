@@ -1,0 +1,51 @@
+#defaultContainer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#defaultContainer div {
+    background: red;
+    display: inline-block;
+    margin: 10px;
+    padding: 30px 5px;
+    width: 200px;
+}
+
+#defaultContainer .green {
+    background: green;
+    display: inline-block;
+    margin: 10px;
+    padding: 30px 5px;
+    width: 200px;
+    transition-property: background;
+    transition-duration: 1s;
+}
+
+.hidden {
+    display: none;
+}
+
+#userform {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#tableform {
+    table-layout: auto;
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+}
+
+#tableform td {
+    border: 1px solid black; padding:10px;
+    border-radius: 10px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.commentsContainer {
+    background-color: lightblue;
+}
