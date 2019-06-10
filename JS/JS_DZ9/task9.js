@@ -82,7 +82,7 @@ Plotly.newPlot('chart', data, layout);
 (иконка, изменения цвета и тд), либо иконка, сообщающая, что приза нет. 
 Количество оставшихся попыток выводим рядом с игровым полем. */
 
-/* let gifts = {
+let gift = {
     dog: "DOG",
     cat: "CAT",
     rat: "RAT",
@@ -93,8 +93,31 @@ Plotly.newPlot('chart', data, layout);
 };
 
 function randomise() {
-    let resArray = Object.keys(gifts);
-    let res = Math.floor(Math.random() * resArray.length); // Дальше не осилил (
-    return res;
+    let resArray = Object.values(gift);
+    let res = Math.floor(Math.random() * resArray.length);
+    return resArray[res];
 }
- */
+
+let counter = document.getElementById('counter');
+
+let num = 3;
+
+function fieldCreation(n) {
+    let lotteryField = document.getElementById('lottery-field');
+    for (let i = 0; i < n; i++) {
+        let ticketContainer = document.createElement('div');
+        ticketContainer.style.backgroundColor = "red";
+        ticketContainer.classList.add('tC');
+        lotteryField.appendChild(ticketContainer);
+        ticketContainer.onclick = function () {
+            if (num > 0) {
+                ticketContainer.textContent = randomise();
+                ticketContainer.style.backgroundColor = "green";
+                num--;
+                counter.textContent = num;
+            }
+        }
+    }
+}
+
+fieldCreation(7);
