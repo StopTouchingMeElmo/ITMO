@@ -20,14 +20,14 @@ function Product(name, price) {
 function Cart() {
     let productsArr = [];
     let amountOfProd = 0;
-    let sumOfProd = 0;
-
+    
     this.addProd = function (Product) {
         productsArr.unshift(Product);
         return productsArr;
     };
 
     this.sumReturn = function () {
+        let sumOfProd = 0;
         for (let i = 0; i < productsArr.length; i++) {
             sumOfProd += productsArr[i].price;
 
@@ -54,6 +54,7 @@ cart1.addProd(prod3);
 cart1.addProd(prod4);
 
 console.log(`Сумма товара: ${cart1.sumReturn()}
+Повторный вызов суммы товара: ${cart1.sumReturn()}
 Количество товара: ${cart1.amountReturn()}`);
 
 /* Задача № 2 */
