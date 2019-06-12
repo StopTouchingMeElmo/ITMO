@@ -56,6 +56,84 @@ cart1.addProd(prod4);
 console.log(`Сумма товара: ${cart1.sumReturn()}
 Количество товара: ${cart1.amountReturn()}`);
 
+/* Задача № 2 */
+
+/* Создать шаблон объектов «Человек».
+Свойства «Имя», «Возраст», «Пол», «Интересы».
+Метод преобразования к строке вида: «Человек: 
+Иван. Возраст: 25 лет. Пол: м. Интересы: 
+музыка, программирование.»
+Создать шаблон объектов «Студент».
+Свойства от наследованные от шаблона объектов 
+«Человек» и добавить «Институт».
+Переопределить метод преобразования к строке 
+вида: «Студент: Иван. Возраст: 25 лет. Пол: м. 
+Интересы: музыка, программирование. 
+Обучается в ИТМО.» */
+
+function Human(name, age, sex, interests) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.interests = interests;
+    this.toString = function () {
+        return `Человек: ${this.name}. Возраст: ${this.age} лет. Пол: ${this.sex}. Интересы: ${this.interests}.`;
+    }
+}
+
+let human1 = new Human('Иван', 25, 'м', 'музыка, программирование');
+console.log(human1.toString());
+
+function Student(name, age, sex, interests, university) {
+    Human.call(this, name, age, sex, interests);
+    this.university = university;
+    this.toString = function () {
+        return `Студент: ${this.name}. Возраст: ${this.age} лет. Пол: ${this.sex}. Интересы: ${this.interests}. Обучается в ${this.university}.`;
+    }
+}
+
+let student1 = new Student('Иван', 25, 'м', 'музыка, программирование', 'ИТМО');
+console.log(student1.toString());
+
+/* Задача № 3 */
+
+/* Создать шаблон объектов «Пользователь».
+Метод преобразования к строке выводит имя пользователя.
+Два фабричных метода:
+- «Создать анонимного пользователя» не получает аргументов,
+ в качества имя пользователя устанавливает «Аноним».
+- «Создать пользователя из данных» в качества аргументов 
+получает объект с именем и возрастом пользователя. */
+
+function User(name) {
+    this.name = name;
+    this.toString = function () {
+        return `Имя пользователя: ${this.name}`;
+    }
+};
+
+User.anonimus = function () {
+    let anon = new User();
+    anon.name = "Аноним";
+    return anon;
+};
+
+console.log(User.anonimus().toString());
+
+let obj = {
+    name: 'Pafnutii',
+    age: 102
+};
+
+User.loged = function (obj) {
+    let log = new User();
+    log.name = obj.name;
+    log.age = obj.age;
+    return log;
+};
+
+console.log(User.loged(obj).toString());
+
 /* Задача № 4 */
 
 /* Выбрать 10 незнакомых (которые не разбирались на занятиях) 
@@ -101,18 +179,3 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/UR
 
 10. Объект WeakMap — коллекция пар ключ-значение. В качестве ключей могут быть использованы только объекты, а значения могут быть произвольных типов.
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakMap */
-
-/* Задача № 2 */
-
-/* Создать шаблон объектов «Человек».
-Свойства «Имя», «Возраст», «Пол», «Интересы».
-Метод преобразования к строке вида: «Человек: 
-Иван. Возраст: 25 лет. Пол: м. Интересы: 
-музыка, программирование.»
-Создать шаблон объектов «Студент».
-Свойства от наследованные от шаблона объектов 
-«Человек» и добавить «Институт».
-Переопределить метод преобразования к строке 
-вида: «Студент: Иван. Возраст: 25 лет. Пол: м. 
-Интересы: музыка, программирование. 
-Обучается в ИТМО.» */
