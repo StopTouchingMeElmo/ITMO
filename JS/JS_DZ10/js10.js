@@ -20,21 +20,18 @@ function Product(name, price) {
 function Cart() {
     let productsArr = [];
     let amountOfProd = 0;
-    
+    let sumOfProd = 0;
+
     this.addProd = function (Product) {
         productsArr.unshift(Product);
+        sumOfProd += Product.price;
+       
         return productsArr;
     };
 
     this.sumReturn = function () {
-        let sumOfProd = 0;
-        for (let i = 0; i < productsArr.length; i++) {
-            sumOfProd += productsArr[i].price;
-
-        }
         return sumOfProd;
     }
-
     this.amountReturn = function () {
         amountOfProd = productsArr.length;
         return amountOfProd;
@@ -46,12 +43,14 @@ let prod1 = new Product('apple', 100);
 let prod2 = new Product('book', 1000);
 let prod3 = new Product('tea', 380);
 let prod4 = new Product('flower', 50);
+let prod5 = new Product('picture', 70);
 
 let cart1 = new Cart();
 cart1.addProd(prod1);
 cart1.addProd(prod2);
 cart1.addProd(prod3);
 cart1.addProd(prod4);
+cart1.addProd(prod5);
 
 console.log(`Сумма товара: ${cart1.sumReturn()}
 Повторный вызов суммы товара: ${cart1.sumReturn()}
