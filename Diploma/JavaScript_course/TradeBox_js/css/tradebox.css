@@ -1,0 +1,902 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 14px;
+    /* border: 1px solid black; */
+    /*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "vertical-left-menu slider"
+        "vertical-left-menu main1"
+        "footer footer";
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: 140px 0.1fr 1fr 120px;
+    grid-gap: 10px;
+
+    background-color: #f0eef0;
+}
+
+/*Structure Areas  */
+header {
+    grid-area: header;
+}
+
+section {
+    grid-area: slider;
+}
+
+#vertical-left-menu {
+    grid-area: vertical-left-menu;
+}
+
+#vertical-right-menu {
+    grid-area: vertical-right-menu;
+}
+
+#main1 {
+    grid-area: main1;
+}
+
+#main2 {
+    grid-area: main2;
+}
+
+#main3 {
+    grid-area: main3;
+}
+
+#main4 {
+    grid-area: main4;
+}
+
+#main5 {
+    grid-area: main5;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/*slider-container {
+    position: relative;
+    padding-top: 23.8095238%;
+    margin-bottom: 20px;*/
+
+/* Reg form */
+.reg {
+    display: none;
+}
+
+.reg:target {
+    display: grid;
+    grid-auto-columns: 300px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    z-index: 1;
+}
+
+/* Log in form */
+.loginform {
+    display: none;
+    background-color: #f0eef0;
+}
+
+.loginform:target {
+    display: grid;
+    grid-auto-columns: 300px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    z-index: 1;
+}
+
+/* Universal classes */
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: gray;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-box {
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: #f0eef0;
+}
+
+.bottoms {
+    position: relative;
+    display: inline-block;
+    color: #777674;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: rgba(255, 255, 255, .5) 1px 1px, rgba(100, 100, 100, .3) 3px 7px 3px;
+    user-select: none;
+    padding: 1em 2em;
+    outline: none;
+    border-radius: 3px / 100%;
+    background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%),
+        linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, .3)),
+        linear-gradient(to right, rgba(125, 125, 125, 1), rgba(255, 255, 255, .9) 45%, rgba(125, 125, 125, .5)),
+        linear-gradient(to right, rgba(125, 125, 125, 1), rgba(255, 255, 255, .9) 45%, rgba(125, 125, 125, .5)),
+        linear-gradient(to right, rgba(223, 190, 170, 1), rgba(255, 255, 255, .9) 45%, rgba(223, 190, 170, .5)),
+        linear-gradient(to right, rgba(223, 190, 170, 1), rgba(255, 255, 255, .9) 45%, rgba(223, 190, 170, .5));
+    background-repeat: no-repeat;
+    background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+    background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+    box-shadow: rgba(0, 0, 0, .5) 3px 10px 10px -10px;
+    /* line-height: 8px; */
+}
+
+.bottoms:hover {
+    transition: .5s linear;
+    background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+}
+
+.bottoms:active {
+    top: 1px;
+}
+
+::-webkit-input-placeholder {
+    color: lightskyblue;
+}
+
+/*header Navigation block 1 */
+header {
+    display: grid;
+    grid-template-rows: 60px 50px 30px;
+}
+
+#nav1 {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 5fr 3fr 1fr;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+
+}
+
+#nav1 ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 1.3em;
+    height: 100%;
+}
+
+#nav1 li {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+#nav1 a {
+    color: grey;
+    /* text-transform: uppercase; */
+}
+
+#nav1 form {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    column-gap: 5px;
+}
+
+#logo {
+    display: block;
+    height: 100%;
+    background-image: url("../img/logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+}
+
+#nav1 div {
+    margin-right: 30px;
+}
+
+/* Стилизация внешнего вида панели Регистрации и Панели входа*/
+#nav1>ul>li>div>form>fieldset {
+    background-color: #69caf0;
+    border-color: #69caf0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* #nav1 > ul > li > div > form > fieldset > input {
+   border-color:#69caf0;
+} */
+
+#nav1>div>li>div>form>fieldset {
+    background-color: #69caf0;
+    border-color: #69caf0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/*header Navigation block 2*/
+#nav2 {
+    display: grid;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+}
+
+#nav2 ul {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    font-size: 2.0em;
+    height: 100%;
+    grid-gap: 20px;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+#nav2 li {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+#nav2 a {
+    color: #777674
+}
+
+#nav2 a:hover {
+    color: rgb(53, 51, 51);
+    font-size: 16px;
+}
+
+#nav2 #catalogue-button:hover {
+    background: #69caf0;
+}
+
+#nav2 #videos-button:hover {
+    background: #f590f5;
+}
+
+#nav2 li:hover {
+    background: #f0eef0;
+
+}
+
+
+
+/*header Navigation block 3*/
+#nav3 {
+    display: grid;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    background-color: #69caf0;
+}
+
+#nav3>ul {
+    display: grid;
+    grid-template-columns: repeat(10, 100px);
+    font-size: 1.3em;
+    height: 100%;
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+#nav3>ul>li {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+#nav3 a {
+    color: #777674
+}
+
+#nav3 a:hover {
+    color: rgb(53, 51, 51);
+    /* font-size: 16px; */
+}
+
+#nav3 li:hover {
+    background: #69caf0;
+
+}
+
+/* Dropdown Navigation3 */
+/* .dropdown__toggle {
+    display: block;
+} */
+
+.dropdown__drawer {
+    position: absolute;
+    background-color: white;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear,
+        visibility 0s linear;
+}
+
+.dropdown.is-open .dropdown__drawer {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu {
+    position: absolute;
+    margin-top: 10px;
+    /*  padding-left: 0;
+    margin: 0; */
+    list-style: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+/* .menu>li+li>a {
+    border-top: 0;
+} */
+
+.menu>li>a {
+    display: block;
+    padding: 8px 16px;
+    /*  color: rgb(167, 112, 194); */
+    background-color: white;
+    text-decoration: none;
+    /*  transition: all 0.2s linear; */
+    border: 1px solid rgb(206, 199, 209);
+}
+
+/* .menu>li>a:hover {
+    background-color: rgb(243, 240, 244);
+    color: rgb(28, 19, 32);
+} */
+
+
+/* switch to Videos catalogue in header Navigation 3 */
+#nav3-videos {
+    display: none;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    background-color: #f590f5;
+}
+
+#nav3-videos ul {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    font-size: 1.3em;
+    height: 100%;
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+#nav3-videos li {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+#nav3-videos a {
+    color: #777674
+}
+
+#nav3-videos a:hover {
+    color: rgb(53, 51, 51);
+    font-size: 16px;
+}
+
+#nav3-videos li:hover {
+    background: #f590f5;
+
+}
+
+/* Switcher videos*/
+
+/* #switch2vid:target~#container #nav3 {
+    display: none;
+}
+
+#switch2vid:target~#container #nav3-videos {
+    display: grid;
+} */
+
+/* Left vertical menu */
+
+#vertical-left-menu {
+    display: grid;
+    grid-template-rows: repeat(10, auto);
+    justify-content: left;
+    grid-gap: 20px;
+    margin-left: 30px;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.3em;
+}
+
+#categories {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+#handmade {
+    display: grid;
+    grid-template-rows: repeat(22, 1fr);
+    grid-gap: 10px;
+}
+
+/* Right vertical menu */
+#vertical-right-menu {
+    display: none;
+    grid-template-rows: repeat(10, auto);
+    justify-content: left;
+    grid-gap: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.3em;
+
+}
+
+#allorders {
+    display: grid;
+    grid-template-rows: repeat(14, 1fr);
+    grid-gap: 10px;
+}
+
+#myorders {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+/* Switcher to orders */
+
+/* #switch2orders:target~#container #vertical-left-menu {
+    display: none;
+}
+
+#switch2orders:target~#container #vertical-right-menu {
+    display: grid;
+
+}
+
+#switch2orders:target~#container #main1 {
+    display: none;
+}
+
+#switch2orders:target~#container #main2 {
+    display: grid;
+
+}
+
+#switch2orders:target~#container .slider {
+    display: none;
+}
+
+#switch2orders:target~#container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main2 vertical-right-menu"
+        "footer footer";
+    grid-template-columns: 1fr 340px;
+    grid-template-rows: 140px 1fr 120px;
+    grid-gap: 10px;
+
+    background-color: #f0eef0;
+} */
+
+/* Slider */
+
+.slider {
+    display: grid;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 1200px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    position: relative;
+
+}
+
+section {
+    margin-left: 161.5px;
+
+}
+
+/* #slider2 {
+    display: none;
+}
+
+#switch2image:target~#container #slider1 {
+    display: none;
+}
+
+#switch2image:target~#container #slider2 {
+    display: grid;
+
+} */
+
+/* .slider {
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+} */
+
+
+.slider li {
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+}
+
+.slider li.active {
+    opacity: 1;
+}
+
+/* #slider1 {
+    overflow: hidden;
+
+} */
+
+
+/* Блок товаров Главной страницы  main1*/
+#main1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(50px, auto);
+    background-color: #f0eef0;
+    grid-gap: 25px;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+/* New main1*/
+.new {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background-color: #f0eef0;
+    gap: 10px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    justify-items: center;
+    align-items: center;
+
+}
+
+.new img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.new h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 10;
+    font-size: 2em;
+    color: #3d525a;
+}
+
+/* goods main1 */
+.goods {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background-color: #f0eef0;
+    gap: 10px;
+    border-radius: 10px;
+    /*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    justify-items: center;
+    align-items: center;
+
+}
+
+.goods img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.goods h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 10;
+    font-size: 2em;
+    color: #3d525a;
+}
+
+/* videos main1 */
+.videos {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background-color: #f0eef0;
+    gap: 10px;
+    border-radius: 10px;
+    /*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    justify-items: center;
+    align-items: center;
+
+}
+
+.videos img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.videos h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 10;
+    font-size: 2em;
+    color: #3d525a;
+}
+
+/* articles main1 */
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background-color: #f0eef0;
+    gap: 10px;
+    border-radius: 10px;
+    /*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    justify-items: center;
+    align-items: center;
+
+}
+
+.articles img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.articles h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 10;
+    font-size: 2em;
+    color: #3d525a;
+}
+
+/* Блок страницы Стола заказов main2 */
+
+#main2 {
+    display: none;
+    grid-template-rows: 150px 1fr 0.5fr;
+    grid-auto-rows: minmax(50px, auto);
+    background-color: #f0eef0;
+    grid-gap: 25px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Раздел Заказов юзеров */
+#main2-orders {
+    display: grid;
+    /* grid-template-rows: repeat(2, 1fr); */
+
+
+}
+
+/* Форма заказов юзеров*/
+.main2-orders-form {
+    display: grid;
+    grid-template-areas:
+        "left-logo describe right-logo"
+        "city describe2 describe2";
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: 2fr 1fr;
+    grid-gap: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#left-logo {
+    grid-area: left-logo;
+}
+
+#right-logo {
+    grid-area: right-logo;
+}
+
+#describe {
+    grid-area: describe;
+}
+
+#describe2 {
+    grid-area: describe2;
+}
+
+#city {
+    grid-area: city;
+}
+
+/* Блок  Продать*/
+
+#main3 {
+    display: none;
+    /* grid-template-rows: 150px 1fr 0.5fr;
+    grid-auto-rows: minmax(50px, auto); */
+    background-color: #f0eef0;
+    grid-gap: 25px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 30px;
+    justify-content: center;
+}
+
+/* .createProdForm {
+    display: grid;
+    width: 500px;
+    /* list-style-type: none;
+    list-style-position: outside; */
+/*  margin: 10px;
+    padding: 10px;
+}  */
+
+.createProdForm li {
+    display: grid;
+    /*  width: 250px; */
+    padding: 12px;
+    /* border-bottom: 1px solid #eee; */
+    /* position: relative; */
+}
+
+.createProdForm li:first-child
+
+/* .createProdForm li:last-child */
+    {
+    border-bottom: 1px solid #777;
+}
+
+.createProdForm label {
+    width: 200px;
+    margin-top: 3px;
+   /*  display: inline-block;
+    float: left; */
+    padding: 3px;
+}
+
+.createProdForm input {
+    height: 20px;
+    width: 300px;
+    padding: 5px 8px;
+}
+
+.createProdForm textarea {
+    padding: 8px;
+    width: 300px;
+}
+
+/* Блок Toys */
+
+#main4 {
+    display: none;
+    grid-template-rows: 150px 1fr 0.5fr;
+    grid-auto-rows: minmax(50px, auto);
+    background-color: #f0eef0;
+    grid-gap: 25px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 30px;
+}
+
+/* Блок Cart */
+
+#main5 {
+    display: none;
+    grid-template-rows: 150px 1fr 0.5fr;
+    grid-auto-rows: minmax(50px, auto);
+    background-color: #f0eef0;
+    grid-gap: 25px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 30px;
+}
+
+/* Блок Подвала */
+
+footer {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    grid-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Адаптивка */
+
+@media screen and (max-width: 1716px) {
+    .slider {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #vertical-left-menu {
+        display: none;
+    }
+
+    #container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .slider {
+        display: none;
+    }
+
+    #container {
+        grid-template-rows: 140px 1fr 120px;
+    }
+
+    /*  #main1 {
+        grid-template-rows: auto auto auto auto; -- не работает что без этой строки, что с ней
+    }
+    .new {
+        grid-template-rows: auto 1fr 1fr; -- увеличил на одну строку, чтобы элементы заняли 2 ряда (верхний ряд под название блока новостей) -- НЕ СРАБОТАЛО
+    } */
+}

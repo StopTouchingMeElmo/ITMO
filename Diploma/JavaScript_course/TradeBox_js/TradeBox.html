@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trade Box</title>
+    <link rel="stylesheet" href="css/tradebox.css">
+    <link rel="stylesheet" href="css/social-buttons.css">
+</head>
+
+<body>
+    <div id="switch2image" class="hidden"></div>
+    <!-- <div id="switch2orders" class="hidden"></div> -->
+    <!--  <div id="switch2vid" class="hidden"></div> -->
+    <div id="container">
+        <header>
+            <div id="nav1">
+                <a id="logo" href="TradeBox.html"></a>
+                <form>
+                    <input type="search" class="search-box" placeholder="    Find the items of your dream">
+                    <input type="submit" class="bottoms" style="background-color: inherit" value="Search">
+                </form>
+                <ul>
+                    <li id="buttonCart"><a class="bottoms">Cart</a></li>
+                    <li><a href="#" class="bottoms">Open a shop</a></li>
+                    <li><a href="#reg" class="bottoms">Sign in</a>
+                        <div id="reg" class="reg">
+                            <form enctype="application/x-www-form-urlencoded" method="POST" name="reg">
+                                <fieldset>
+                                    <p>
+                                        <label>Login:
+                                            <input type="text" placeholder="Ivan" minlength="2" maxlength="20" required>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>E-mail:
+                                            <input type="email" placeholder="example@example.com" required></label>
+                                    </p>
+                                    <p>
+                                        <label>Password:
+                                            <input type="password" placeholder="Enter password" minlength="5"
+                                                maxlength="20" required></label>
+                                    </p>
+                                    <br />
+                                    <p>
+                                        <label>Confirm password:
+                                            <input type="password" placeholder="Confirm password" minlength="5"
+                                                maxlength="20" required></label>
+                                    </p>
+                                    <br />
+                                    <p>
+                                        <input type="submit" value="Register">
+                                    </p>
+                                </fieldset>
+
+                                <br />
+
+                                <fieldset>
+                                    <br />
+                                    <label>Upload file:
+                                        <input type="file" accept="image/*"></label>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <input type="submit" value="Upload">
+                                    </p>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <button><a href="#" type="submit">Отмена</a></button>
+                                    </p>
+                                </fieldset>
+                                <br />
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <li><a href="#loginform" class="bottoms">Log in</a>
+                        <div id="loginform" class="loginform">
+                            <form enctype="application/x-www-form-urlencoded" method="POST" name="reg">
+                                <fieldset>
+                                    <p>
+                                        <label>Login:
+                                            <input type="text" placeholder="Ivan" minlength="2" maxlength="20" required>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>E-mail:
+                                            <input type="email" placeholder="example@example.com" required></label>
+                                    </p>
+                                    <br />
+                                    <p>
+                                        <input type="submit" value="Log in">
+                                    </p>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <button><a href="#" type="submit">Отмена</a></button>
+                                    </p>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            <div id="nav2">
+                <ul>
+                    <li id="catalogue-button"><a href="TradeBox.html">Catalogue</a></li>
+                    <li id="orders-button"><a>Заказать</a></li><!--  href="#switch2orders" -->
+                    <li id="videos-button"><a>Видео</a></li> <!-- href="#switch2vid" -->
+                    <li id="sell-button"><a>Продать</a></li><!-- href="TradeBox.html" -->
+                </ul>
+            </div>
+            <div id="nav3">
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown__toggle" href="#">Accessories</a>
+                            <div class="dropdown__drawer">
+                                <ul class="menu">
+                                    <li><a href="#belts">Belts</a></li>
+                                    <li><a href="#hats">Hats</a></li>
+                                    <li><a href="#glasses">Glasses</a></li>
+                                    <li><a href="#umbrellas">Umbrellas</a></li>
+                                    <li><a href="#socks">Socks</a></li>
+                                    <li><a href="#stockings">Stockings</a></li>
+                                    <li><a href="#glasses">Gloves</a></li>
+                                    <li><a href="#umbrellas">Collars</a></li>
+                                    <li><a href="#belts">Fans</a></li>
+                                    <li><a href="#hats">Scarves</a></li>
+                                    <li><a href="#glasses">Caps</a></li>
+                                    <li><a href="#umbrellas">Ties</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="#">Jewelry</a></li>
+                    <li><a href="#">Paintings</a></li>
+                    <li  id="petsButton"><a>Toys</a></li>
+                    <li><a href="#">Souvenirs</a></li>
+                    <li><a href="#">Clothing</a></li>
+                    <li><a href="#">Musical</a></li>
+                    <li><a href="#">Children</a></li>
+                    <li><a href="#">Pets</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+            </div>
+
+            <div id="nav3-videos">
+                <ul>
+                    <li><a href="#">Interviews</a></li>
+                    <li><a href="#">Lifehacks</a></li>
+                    <li><a href="#">Ideas</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">History</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <section id="slider1">
+            <!-- <div id="slider1">
+                <ul>
+                    <li><a href="#switch2image"><img src="image/bunner2.jpg"></a></li>
+                </ul>
+            </div> -->
+            <!-- <div id="slider2">
+                <ul>
+                    <li><a href="#"><img src="image/bunner4.jpg"></a></li>
+                </ul>
+            </div> -->
+        </section>
+        <!-- Вертикальное боковое меню. Левое и Правое -->
+        <div id="vertical-left-menu">
+            <ul id="categories">
+                <h1>Categories</h1>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a>For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+            </ul>
+            <ul id="handmade">
+                <h1>Handmade items</h1>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a href="#">For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a href="#">For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a href="#">For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a href="#">For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+                <li><a href="#">For Pets</a></li>
+                <li><a href="#">For Children</a></li>
+                <li><a href="#">For Men</a></li>
+                <li><a href="#">For Women</a></li>
+            </ul>
+        </div>
+        <div id="vertical-right-menu">
+            <ul id="allorders">
+                <h1>Заказы пользователей</h1>
+                <li><a href="#">Украшения</a></li>
+                <li><a href="#">Сувениры</a></li>
+                <li><a href="#">Посуда</a></li>
+                <li><a href="#">Игрушки</a></li>
+                <li><a href="#">Обувь</a></li>
+                <li><a href="#">Картины</a></li>
+                <li><a href="#">Аксессуары</a></li>
+                <li><a href="#">Для дизайна</a></li>
+                <li><a href="#">Для рекламы</a></li>
+                <li><a href="#">IT</a></li>
+                <li><a href="#">Флористика</a></li>
+                <li><a href="#">Для питомцев</a></li>
+                <li><a href="#">Для детей</a></li>
+                <li><a href="#">Для женщин</a></li>
+            </ul>
+            <ul id="myorders">
+                <h1>Мои заказы</h1>
+                <li><a href="#">Заказ №1</a></li>
+                <li><a href="#">Заказ №2</a></li>
+                <li><a href="#">Заказ №3</a></li>
+                <li><a href="#">Заказ №4</a></li>
+            </ul>
+        </div>
+        <!-- Блок основного содержания. Для главной страницы и Для Стола заказов. -->
+        <div id="main1">
+            <div class="new">
+                <h1>New</h1>
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+                <img src="image/news.jpg">
+            </div>
+            <div class="goods">
+                <h1>On trend</h1>
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+                <img src="image/goods.jpg">
+            </div>
+            <div class="videos">
+                <h1>Видео о наших товарах</h1>
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+                <img src="image/videos.jpg">
+            </div>
+            <div class="articles">
+                <h1>Полезные статьи</h1>
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+                <img src="image/article.jpg">
+            </div>
+        </div>
+        <div id="main2">
+            <div class="main2-menu">Меню</div>
+            <div class="main2-orders">
+                <h1>ЗАКАЗЫ ПОЛЬЗОВАТЕЛЕЙ</h1><br>
+                <div class="main2-orders-form">
+                    <div id="left-logo">
+                        <img src="image/logo2.jpg">
+                    </div>
+                    <div id="city">
+                        Любой город
+                    </div>
+                    <div id="right-logo">
+                        Актуально до 20 августа 2019 года
+                    </div>
+                    <div id="describe">
+                        <h1>Картина маслом</h1>
+                        <br>
+                        Запилите мне картину
+                    </div>
+                    <div id="describe2">
+                        Заказ добавлен 2 часа назад
+                    </div>
+                </div>
+                <div class="main2-orders-form">
+                    <div id="right-logo">
+                        Актуально в течение недели
+                    </div>
+                    <div id="left-logo">
+                        <img src="image/logo.jpg">
+                    </div>
+                    <div id="city">
+                        Санкт-Петербург
+                    </div>
+                    <div id="describe">
+                        <h1>Ювелирные украшения</h1>
+                        <br>
+                        Запилите кольцо всевластья
+                    </div>
+                    <div id="describe2">
+                        Заказ добавлен сто лет назад
+                    </div>
+                </div>
+            </div>
+            <div class="main2-myorders">
+                <h1>МОИ ЗАКАЗЫ</h1><br>
+                <div class="main2-orders-form">
+                    <div id="left-logo">
+                        <img src="image/mylogo.jpg">
+                    </div>
+                    <div id="city">
+                        Санкт-Петербург
+                    </div>
+                    <div id="myright-logo">
+                        Актуально до 01 августа 2019 года
+                    </div>
+                    <div id="describe">
+                        <h1>IT</h1>
+                        <br>
+                        Запилите мне курсовик по CSS HTML
+                    </div>
+                    <div id="describe2">
+                        Заказ добавлен 2 часа назад
+                    </div>
+                </div>
+                <div class="main2-orders-form">
+                    <div id="right-logo">
+                        Актуально в течение дня
+                    </div>
+                    <div id="left-logo">
+                        <img src="image/mylogo.jpg">
+                    </div>
+                    <div id="city">
+                        Санкт-Петербург
+                    </div>
+                    <div id="describe">
+                        <h1>IT</h1>
+                        <br>
+                        Запилите курсовик по JS
+                    </div>
+                    <div id="describe2">
+                        Заказ добавлен 1 час назад
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="main3">
+            <div class="createProdForm">
+                <form>
+                    <ul>
+                        <li>
+                            <h2>Заполните карточку вашего товара</h2>
+                            </br>
+                            <span class="required_notification">* Поля обязательные к заполнению</span>
+                        </li>
+                        <li>
+                            <label for="name">Название товара*:</label>
+                            <input type="text" name="name" required />
+                        </li>
+                        <li>
+                            <label for="price">Цена товара*:</label>
+                            <input type="text" name="price" required />
+                        </li>
+                        <li>
+                            <label for="image">Загрузите изображение товара:</label>
+                            <input type="file" multiple="multiple" accept="image" name="image" />
+                        </li>
+                        <li>
+                            <label for="nick">Ваше имя*:</label>
+                            <input type="text" name="nick" required />
+                        </li>
+                        <li>
+                            <label for="email">Email*:</label>
+                            <input type="email" name="email" placeholder="my@email.com" required />
+                        </li>
+                        <li>
+                            <label for="phone">Телефон*:</label>
+                            <input type="text" name="phone" placeholder="+7(123)4567891" required />
+                        </li>
+                        <li>
+                            <label for="descr">Описание товара:</label>
+                            <textarea name="descr"></textarea>
+                        </li>
+                        <li>
+                            <button id="createProdButton" type="submit">Создать товар</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <div id="main4">
+            <div id="previewList"></div>
+        </div>
+
+        <div id="main5">
+            <div id="cartList"></div>
+        </div>
+
+        <footer>
+            <div>
+                <a href="#" class="sb circle glossy orange twitter">Twitter</a>
+                <a href="#" class="sb circle glossy blue facebook">Facebook</a>
+                <a href="#" class="sb circle glossy light-blue linkedin">linkedin</a>
+                <a href="#" class="sb circle glossy gray rss">rss</a>
+                <a href="#" class="sb circle glossy light-purple vimeo">vimeo</a>
+                <a href="#" class="sb circle glossy red youtube">youtube</a>
+            </div>
+            <address>
+                <p></p>© 2006–2019. TradeBox is a registered trademark.<br>
+                All rights to the content of texts and images published on TradeBox are protected in
+                accordance with Russian and international
+                legislation on copyright and related rights.<br> Any use of the materials is permitted only with the
+                written
+                consent of the copyright holder. 18+</p>
+                <br />
+                <address>
+        </footer>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="js/tradeBox.js"></script>
+</body>
+
+</html>
