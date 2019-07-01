@@ -15,22 +15,22 @@ let server = http.createServer(function (req, res) {
             let num = content[i];
             arrNum.push(num);
 
-            let out1 = '';
-            let out2 = '';
+            let out1 = [];
+            let out2 = [];
 
             for (let i = 0; i < arrNum.length; i++) {
                 let num1 = arrNum[i];
                 if (num1 % 2 === 0) {
-                    out1 += num1 + ' ';
+                    out1.push(num1);
                 }
             };
 
             for (let i = 0; i < arrNum.length; i++) {
                 let num2 = arrNum[i];
-                out2 += num2 ** 3 + ' ';
+                out2.push(num2 ** 3);
             };
 
-            fs.writeFile('./out-1.txt', out1, (err) => {
+            fs.writeFile('./out-1.txt', out1.join(' '), (err) => {
                 if (err) {
                     console.log('Something gone wron with out-1 file');
                     return res.end(err);
@@ -38,7 +38,7 @@ let server = http.createServer(function (req, res) {
                 console.log('The file out-1 has been saved!');
             });
 
-            fs.writeFile('./out-2.txt', out2, (err) => {
+            fs.writeFile('./out-2.txt', out2.join(' '), (err) => {
                 if (err) {
                     console.log('Something gone wron with out-2 file');
                     return res.end(err);
@@ -50,6 +50,7 @@ let server = http.createServer(function (req, res) {
                 'Content-Type': 'text/html'
             });
             res.end("Done");
+
         }
 
     });
