@@ -142,20 +142,22 @@ fs.readdir(dir, function callback(err, list) {
 
 /* Задача 6 */
 /*  */
-let mymodule = require('./module.js');
+/* let mymodule = require('./module.js');
 
 let dir = process.argv[2];
 let ext = process.argv[3];
 
 let callback = function (err, data) {
-    if (err) {
-        console.log(err);
-    }
-    for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
-    }
+  if (err) {
+    console.log(err);
+  }
+  for (let i = 0; i < data.length; i++) {
+    console.log(data[i]);
+  }
 };
-mymodule(dir, ext, callback);
+mymodule(dir, ext, callback); */
+
+//learnyounode:
 
 /* var filterFn = require('./solution_filter.js')
     var dir = process.argv[2]
@@ -170,3 +172,418 @@ mymodule(dir, ext, callback);
         console.log(file)
       })
     }) */
+
+/* Задача 7 */
+
+/* HTTP CLIENT (Задача 7 из 13)
+
+  Реализуйте программу, которая посылает HTTP GET запрос на URL, который вы
+  получите в качестве первого аргумента командной строки. Выведите
+  содержимое каждого события "data" из ответа (response) построчно в консоль
+  (stdout).  */
+
+/* let http = require('http');
+let urlAddress = process.argv[2];
+
+http.get(urlAddress, function callback(response) {
+  response.setEncoding('utf8');
+  response.on('data', function (data) {
+    console.log(data);
+  });
+}); */
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+
+    http.get(process.argv[2], function (response) {
+      response.setEncoding('utf8')
+      response.on('data', console.log)
+      response.on('error', console.error)
+    }).on('error', console.error) */
+
+/* Задача 8 */
+/*  HTTP COLLECT (Задача 8 из 13)
+
+  Реализуйте программу, которая посылает HTTP GET запрос на URL, который вы
+  получите в качестве первого аргумента командной строки. Соберите все
+  данные с сервера (не только первое событие "data") и выведите две строки в
+  консоль (stdout).
+
+  Первая строка должна содержать количество символов, полученных с сервера.
+  А вторая должна непостредственно вывести эти символы. */
+
+/* let http = require('http');
+let urlAddress = process.argv[2];
+let allData = '';
+
+http.get(urlAddress, function callback(response) {
+  response.setEncoding('utf8');
+  response.on('data', function (data) {
+    allData += data;
+  });
+  response.on('end', function () {
+    console.log(allData.length);
+    console.log(allData);
+  });
+}); */
+
+/* learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+    var bl = require('bl')
+
+    http.get(process.argv[2], function (response) {
+      response.pipe(bl(function (err, data) {
+        if (err) {
+          return console.error(err)
+        }
+        data = data.toString()
+        console.log(data.length)
+        console.log(data)
+      }))
+    })
+
+────────────── */
+
+/* Задача 9 */
+/* JUGGLING ASYNC (Задача 9 из 13)
+
+  Эта задание похоже на предыдущее (HTTP COLLECT) тем, что Вам снова
+  придется использовать http.get(). Но в этот раз, Вы получите три адреса
+  (URL) в качестве трех первых аргументов командной строки.
+
+  Соберите контент с каждого адреса, который получите, и выведите его в
+  консоль (stdout). Не нужно выводить общее количество полученных данных,
+  просто выведите содержимое каждого адреса на новой строке. Учтите, что Вы
+  должны вывести содержимое в том порядке, в каком Вы получили адреса. */
+
+/* let http = require('http');
+let urlAddress1 = process.argv[2];
+let urlAddress2 = process.argv[3];
+let urlAddress3 = process.argv[4];
+
+let content1 = '';
+let content2 = '';
+let content3 = '';
+
+http.get(urlAddress1, function callback(response) {
+  response.setEncoding('utf8');
+  response.on('data', function (data) {
+    content1 += data;
+  });
+  response.on('end', function () {
+    console.log(content1);
+
+    http.get(urlAddress2, function callback(response) {
+      response.setEncoding('utf8');
+      response.on('data', function (data) {
+        content2 += data;
+      });
+      response.on('end', function () {
+        console.log(content2);
+
+        http.get(urlAddress3, function callback(response) {
+          response.setEncoding('utf8');
+          response.on('data', function (data) {
+            content3 += data;
+          });
+          response.on('end', function () {
+            console.log(content3);
+          });
+        });
+      });
+    });
+  });
+}); */
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+    var bl = require('bl')
+    var results = []
+    var count = 0
+
+    function printResults () {
+      for (var i = 0; i < 3; i++) {
+        console.log(results[i])
+      }
+    }
+
+    function httpGet (index) {
+      http.get(process.argv[2 + index], function (response) {
+        response.pipe(bl(function (err, data) {
+          if (err) {
+            return console.error(err)
+          }
+
+          results[index] = data.toString()
+          count++
+
+          if (count === 3) {
+            printResults()
+          }
+        }))
+      })
+    }
+
+    for (var i = 0; i < 3; i++) {
+      httpGet(i)
+    }
+
+────────────────────────────────── */
+
+/* Задача 10 */
+
+/* TIME SERVER (Задача 10 из 13)
+
+  Реализуйте TCP сервер, возвращающий текущее время при соединении.
+
+  Ваш сервер должен ожидать TCP соединений на порту, который Вы получите в
+  качестве первого аргумента командной строки. На каждое новое соединение
+  сервер должен возвращать текущую дату и время в формате:
+
+     "YYYY-MM-DD hh:mm"
+
+  В конце строки с именем обязательно должен быть символ переноса строки.
+  Месяцы, дни, часы и минуты должны быть двучисленными, например:
+
+     "2013-07-06 17:42" */
+
+/* let myPort = process.argv[2];
+let net = require('net');
+
+let d = new Date();
+let year = d.getFullYear();
+let month = d.getMonth() + 1;
+if (month < 10) {
+  month = '0' + month;
+};
+let day = d.getDate();
+if (day < 10) {
+  day = '0' + day;
+};
+let hour = d.getHours();
+if (hour < 10) {
+  hour = '0' + hour;
+};
+let minute = d.getMinutes();
+if (minute < 10) {
+  minute = '0' + minute;
+};
+
+let currentDateTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + '\n';
+
+let server = net.createServer(function listener(socket) {
+  socket.end(currentDateTime);
+});
+server.listen(myPort); */
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var net = require('net')
+
+    function zeroFill (i) {
+      return (i < 10 ? '0' : '') + i
+    }
+
+    function now () {
+      var d = new Date()
+      return d.getFullYear() + '-' +
+        zeroFill(d.getMonth() + 1) + '-' +
+        zeroFill(d.getDate()) + ' ' +
+        zeroFill(d.getHours()) + ':' +
+        zeroFill(d.getMinutes())
+    }
+
+    var server = net.createServer(function (socket) {
+      socket.end(now() + '\n')
+    })
+
+    server.listen(Number(process.argv[2]))
+
+────────────────────────────────── */
+
+/* Задача 11 */
+
+/*  HTTP FILE SERVER (Задача 11 из 13)
+
+  Реализуйте HTTP сервер, который отдает одинаковый файл для всех входящих
+  запросов.
+
+  Сервер должен слушать порт, который будет передан в качестве первого
+  аргумента командной строки.
+
+  Файл, который нужно возвращать, будет передан в качестве второго аргумента
+  командной строки. Вы должны использовать fs.createReadStream() метод для
+  отдачи содержимого файла. */
+
+/* let myPort = process.argv[2];
+let myFile = process.argv[3];
+
+let http = require('http');
+let fs = require('fs');
+
+let server = http.createServer(function callback(req, res) {
+  let readStr = fs.createReadStream(myFile);
+  readStr.pipe(res);
+});
+server.listen(myPort); */
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+    var fs = require('fs')
+
+    var server = http.createServer(function (req, res) {
+      res.writeHead(200, { 'content-type': 'text/plain' })
+
+      fs.createReadStream(process.argv[3]).pipe(res)
+    })
+
+    server.listen(Number(process.argv[2]))
+
+───────────────────────────────────────────── */
+
+/* Задача 12 */
+/*  HTTP UPPERCASERER (Задача 12 из 13)
+
+  Реализуйте HTTP сервер который принимает только POST запросы и
+  конвертирует все символы тела запроса в верхний регистр и возвращает их
+  клиенту.
+
+  Ваш сервер должен слушать порт, который Вы получите в качестве первого
+  аргумента командной строки. */
+
+/* let myPort = process.argv[2];
+let http = require('http');
+let map = require('through2-map');
+
+let server = http.createServer(function (req, res) {
+  if (req.method === 'POST') {
+
+    req.pipe(map(function (chunk) {
+      return chunk.toString().toUpperCase();
+    })).pipe(res);
+  }
+});
+
+server.listen(myPort); */
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+    var map = require('through2-map')
+
+    var server = http.createServer(function (req, res) {
+      if (req.method !== 'POST') {
+        return res.end('send me a POST\n')
+      }
+
+      req.pipe(map(function (chunk) {
+        return chunk.toString().toUpperCase()
+      })).pipe(res)
+    })
+
+    server.listen(Number(process.argv[2]))
+
+───────────────────── */
+
+/* Задача 13 */
+/*  HTTP JSON API SERVER (Задача 13 из 13)
+
+  Реализуйте HTTP сервер, который возвращает JSON объект на GET запрос по
+  адресу /api/parsetime. Запрос должен содержать в строке запроса ключ 'iso'
+  и время в ISO-формате в качестве значения. */
+
+let myPort = process.argv[2];
+let http = require('http');
+let url = require('url');
+
+let server = http.createServer(function (req, res) {
+  if (req.method === 'GET') {
+
+    let parsedUrl = url.parse(req.url, true);
+    let path = parsedUrl.path;
+
+    let d = new Date(parsedUrl.query.iso)
+
+    if (path.indexOf('parsetime') >= 0) {
+      let result = {
+        hour: d.getHours(),
+        minute: d.getMinutes(),
+        second: d.getSeconds()
+      }
+      res.end(JSON.stringify(result));
+    };
+
+    if (path.indexOf('unixtime') >= 0) {
+      let result2 = {
+        unixtime: d.getTime()
+      };
+      res.end(JSON.stringify(result2));
+    };
+
+    res.writeHead(200, {
+      'Content-Type': 'application/json'
+    });
+  }
+});
+server.listen(myPort);
+
+/*  learnyounode:
+
+─────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+    var url = require('url')
+
+    function parsetime (time) {
+      return {
+        hour: time.getHours(),
+        minute: time.getMinutes(),
+        second: time.getSeconds()
+      }
+    }
+
+    function unixtime (time) {
+      return { unixtime: time.getTime() }
+    }
+
+    var server = http.createServer(function (req, res) {
+      var parsedUrl = url.parse(req.url, true)
+      var time = new Date(parsedUrl.query.iso)
+      var result
+
+      if (/^\/api\/parsetime/.test(req.url)) {
+        result = parsetime(time)
+      } else if (/^\/api\/unixtime/.test(req.url)) {
+        result = unixtime(time)
+      }
+
+      if (result) {
+        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify(result))
+      } else {
+        res.writeHead(404)
+        res.end()
+      }
+    })
+    server.listen(Number(process.argv[2]))
+
+─────────────────────────────────────────────────────────────────────────────
+ Вы решили все задачи! Ура!
+
+─────────────────────────────── */
