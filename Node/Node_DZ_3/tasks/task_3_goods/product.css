@@ -1,0 +1,25 @@
+img {
+    width: auto;
+    height: 80px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    background-color: lightslategray;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.good {
+    display: grid;
+    justify-content: center;
+    background-color: blueviolet;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 250px;
+    width: 500px;
+    grid-gap: 10px;
+}
